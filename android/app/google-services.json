@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "923172139009",
+    "project_id": "mobilab-eb68d",
+    "storage_bucket": "mobilab-eb68d.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:923172139009:android:4857ea119cb9c522f15000",
+        "android_client_info": {
+          "package_name": "com.barracudapps.mobilab"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "923172139009-o8221f8a5cfrt11khkoh5d8cv4hi8qo6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAphJbsF1Ed5RMcQqUwkr6V0Bw2YdO8-Uk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "923172139009-o8221f8a5cfrt11khkoh5d8cv4hi8qo6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
