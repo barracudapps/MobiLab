@@ -2,6 +2,10 @@
 
 Test app for Mobi Lab with lists management created with Flutter/Dart and coded on Android Studio.
 
+Add basic items (text), remove them or add them as favorite.
+
+Basic project that could be optimized using [Bloc Pattern](https://pub.dev/packages/flutter_bloc)
+
 ## Getting Started
 
 Add, check, uncheck and delete items stored on Firebase using Cloud Firestore.
