@@ -10,6 +10,26 @@ Add, check, uncheck and delete items stored on Firebase using Cloud Firestore.
 - [How to release the Android app](https://docs.flutter.dev/deployment/android)
 - [How to release the iOS app](https://docs.flutter.dev/deployment/ios)
 
+## Structure
+
+The Flutter project is structured as follows:
+
+```
+├── lib
+│   ├── pages
+│   │   └── list_page.dart
+│   ├── tools
+│   │   ├── models
+│   │   │   └── tiles.dart
+│   │   ├── utils
+│   │   │   └── global_variables.dart
+│   │   └── list_manager.dart
+│   └── main.dart
+└── test
+    └── widget_test.dart
+```
+
+
 ## Time
 
 Project created : 2022.08.16 - 16:20 GMT+2:00
