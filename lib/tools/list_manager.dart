@@ -6,8 +6,9 @@ import 'utils/global_variables.dart';
 
 abstract class ListManagerImpl{
   Future<void> getTiles();
-  Future<void> addTile(String title, String content);
+  Future<void> addTile(String id, String title, String content);
   Future<void> deleteTile(String id);
+  Future<void> setFavorite(String id, bool fav);
 }
 
 class ListManager implements ListManagerImpl {
@@ -23,6 +24,7 @@ class ListManager implements ListManagerImpl {
           itemsList.add({
             "title": item["title"],
             "content": item["content"],
+            "favorite": item["favorite"],
             "id": item.id,
           });
         }
@@ -31,20 +33,38 @@ class ListManager implements ListManagerImpl {
   }
 
   @override
-  Future<void> addTile(String title, String content) async {
+  Future<void> addTile(String id, String title, String content) async {
     FirebaseFirestore.instance.runTransaction((transaction) async{
       transaction.set(FirebaseFirestore.instance
           .collection("items")
-          .doc(itemsList[itemsList.length]),
+          .doc(id),
           {
             "title": title,
             "content": content,
+            "favorite": false,
           });
     });
   }
 
   @override
   Future<void> deleteTile(String id) async {
-    ///TODO Implement
+    FirebaseFirestore.instance.runTransaction((transaction) async{
+      transaction.delete(FirebaseFirestore.instance
+          .collection("items")
+          .doc(id));
+    });
+  }
+
+  @override
+  Future<void> setFavorite(String id, bool fav) async {
+    FirebaseFirestore.instance.runTransaction((transaction) async{
+      transaction.update(FirebaseFirestore.instance
+          .collection("items")
+          .doc(id),
+          {
+            "favorite": !fav,
+          });
+      Future.delayed(Duration.zero);
+    });
   }
 }

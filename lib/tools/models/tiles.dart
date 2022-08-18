@@ -6,13 +6,58 @@ class MyListTile extends StatelessWidget {
     required this.title,
     required this.content,
     required this.index,
-    required this.id,
+    required this.isFav,
   }) : super(key: key);
 
   final String title;
   final String content;
   final int index;
-  final int id;
+  final bool isFav;
+
+  Widget _indexItem() => SizedBox(
+    height: 60,
+    width: 60,
+    child: Material(
+      borderRadius: const BorderRadius.horizontal(left: Radius.circular(5)),
+      child: Center(
+        child: Text("$index"),
+      ),
+    ),
+  );
+
+  Widget _textItem(double size) => SizedBox(
+    width: size,
+    child: Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Text(
+          title,
+          style: const TextStyle(
+            color: Colors.white,
+            fontWeight: FontWeight.bold,
+          ),
+        ),
+        Expanded(
+          child: Text(
+            content,
+            overflow: TextOverflow.clip,
+            maxLines: 2,
+            style: const TextStyle(
+              color: Colors.white,
+            ),
+          ),
+        ),
+      ],
+    ),
+  );
+
+  Widget _favItem() => Material(
+    borderRadius: const BorderRadius.horizontal(left: Radius.circular(5)),
+    child: Center(
+      child: Icon(isFav? Icons.favorite:Icons.favorite_border),
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -29,38 +74,15 @@ class MyListTile extends StatelessWidget {
           children: [
             Row(
               children: [
-                SizedBox(
-                  height: 60,
-                  width: 60,
-                  child: Material(
-                    borderRadius: const BorderRadius.horizontal(left: Radius.circular(5)),
-                    child: Center(
-                      child: Text("$index"),
-                    ),
-                  ),
-                ),
+                _indexItem(),
                 const SizedBox(width: 24,),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      title,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                    Text(
-                      content,
-                      style: const TextStyle(
-                        color: Colors.white,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
-                  ],
-                ),
+                _textItem(MediaQuery.of(context).size.width/2),
               ],
+            ),
+            SizedBox(
+              height: 60,
+              width: 60,
+              child: _favItem(),
             ),
           ],
         ),
