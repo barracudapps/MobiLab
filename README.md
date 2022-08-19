@@ -32,7 +32,7 @@ The Flutter project is structured as follows:
 │   │   └── list_manager.dart
 │   └── main.dart
 └── test
-    └── widget_test.dart
+    └── tools_list_manager.dart
 ```
 
 
