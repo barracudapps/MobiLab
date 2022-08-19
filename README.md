@@ -4,6 +4,8 @@ Test app for Mobi Lab with lists management created with Flutter/Dart and coded 
 
 Add basic items (text), remove them or add them as favorite.
 
+Application tested on Android but working on iOS too.
+
 Basic project that could be optimized using [Bloc Pattern](https://pub.dev/packages/flutter_bloc)
 
 ## Getting Started
@@ -45,4 +47,5 @@ Start | End | Total
 2022.08.16 - 16:20 | 2022.08.16 - 16:46 | 00:26 |
 2022.08.16 - 17:36 | 2022.08.16 - 20:17 | 02:41 |
 2022.08.18 - 10:52 | 2022.08.18 - 12:42 | 01:50 |
-***Total*** |  | ***04:57***
+2022.08.19 - 12:54 | 2022.08.19 - 14:19 | 01:25 |
+***Total*** |  | ***06:22***

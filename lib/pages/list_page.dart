@@ -87,9 +87,6 @@ class _ListPageState extends State<ListPage> {
 
   @override
   Widget build(BuildContext context) {
-    print(DateTime.now().toString());
-    print(itemsList);
-
     return Scaffold(
       body: itemsList.isEmpty
           ? Center(

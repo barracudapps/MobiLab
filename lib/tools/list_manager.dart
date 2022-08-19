@@ -8,6 +8,7 @@ abstract class ListManagerImpl{
   Future<void> getTiles();
   Future<void> addTile(String id, String title, String content);
   Future<void> deleteTile(String id);
+  Future<void> clearTiles();
   Future<void> setFavorite(String id, bool fav);
 }
 
@@ -53,6 +54,14 @@ class ListManager implements ListManagerImpl {
           .collection("items")
           .doc(id));
     });
+  }
+
+  @override
+  Future<void> clearTiles() async {
+    for(int i = 0; i < itemsList.length; i ++){
+      await deleteTile(itemsList[i]["id"]);
+    }
+    itemsList.clear();
   }
 
   @override
